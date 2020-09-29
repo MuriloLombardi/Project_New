@@ -12,6 +12,7 @@ class MainClass {
     lanche.EscolheCarne();
     lanche.EscolheQueijo();
     lanche.EscolheAdicionais();
+    comanda.FazPedido(lanche.RetornaPedido());
     comanda.Pagamento(lanche.RetornaPreco());
 
 

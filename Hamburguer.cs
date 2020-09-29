@@ -15,23 +15,23 @@ class Hamburguer
     Console.WriteLine ("Digite o codigo do pão desejado: \n| 1-Tradicional=R$1,50 | 2-Frances=R$2,00 | 3-Australiano=R$2,50 | 4-Tradicional+Gergelim=R$2,00 | 5-Tapioca=R$2,50 |");
     aux = Convert.ToInt32(Console.ReadLine());
     switch (aux){
-      case 1: pao = "Tradicional";
+      case 1: pao = "Tradicional ;";
       Console.WriteLine("Pão Escolhido {0}.\n", pao);
       preco = (preco+1.5);
       break;
-      case 2: pao = "Frances";
+      case 2: pao = "Frances ;";
       Console.WriteLine("Pão Escolhido {0}.\n", pao);
       preco = (preco+2.0);
       break;
-      case 3: pao = "Australiano";
+      case 3: pao = "Australiano ;";
       Console.WriteLine("Pão Escolhido {0}.\n", pao);
       preco = (preco+2.5);
       break;
-      case 4: pao = "Tradicional + Gergelim";
+      case 4: pao = "Tradicional + Gergelim ;";
       Console.WriteLine("Pão Escolhido {0}.\n", pao);
       preco = (preco+2.0);
       break;
-      case 5: pao = "Tapioca";
+      case 5: pao = "Tapioca ;";
       Console.WriteLine("Escolhido {0}.\n", pao);
       preco = (preco+2.5);
       break;
@@ -166,6 +166,11 @@ class Hamburguer
 
   public double RetornaPreco(){
     return preco;
+  }
+
+  public string RetornaPedido(){
+    string pedido = (pao + carne + queijo + adicionais);
+    return(pedido);
   }
 
 }

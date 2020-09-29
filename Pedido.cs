@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Text;
 
 class Pedido
     {
@@ -30,5 +32,20 @@ class Pedido
         }
 
       }
+
+      public void FazPedido(string texto){
+        string entrada;
+        FileStream arquivo = new FileStream("Pedido.txt", FileMode.Open, FileAccess.Write);
+        StreamWriter escrevendo = new StreamWriter(arquivo, Encoding.UTF8);
+
+        escrevendo.WriteLine(cliente);
+        entrada = string.Empty;
+        entrada = texto;
+        escrevendo.WriteLine(entrada);
+        escrevendo.Close();
+        arquivo.Close();
+      }
+
+
 
     }
