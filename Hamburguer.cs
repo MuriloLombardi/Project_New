@@ -2,31 +2,38 @@ using System;
 
 class Hamburguer
 {
+  
   private string pao;
   private string carne = "";
   private string queijo = "";
   private string adicionais = "";
+  private double preco = 0.00;
 
   public void EscolhePao () {
     int aux;
     do{
-    Console.WriteLine ("Digite o codigo do pão desejado: \n| 1-Tradicional | 2-Frances | 3-Australiano | 4-Tradicional+Gergelim | 5-Tapioca |");
+    Console.WriteLine ("Digite o codigo do pão desejado: \n| 1-Tradicional=R$1,50 | 2-Frances=R$2,00 | 3-Australiano=R$2,50 | 4-Tradicional+Gergelim=R$2,00 | 5-Tapioca=R$2,50 |");
     aux = Convert.ToInt32(Console.ReadLine());
     switch (aux){
       case 1: pao = "Tradicional";
       Console.WriteLine("Pão Escolhido {0}.\n", pao);
+      preco = (preco+1.5);
       break;
       case 2: pao = "Frances";
       Console.WriteLine("Pão Escolhido {0}.\n", pao);
+      preco = (preco+2.0);
       break;
       case 3: pao = "Australiano";
       Console.WriteLine("Pão Escolhido {0}.\n", pao);
+      preco = (preco+2.5);
       break;
       case 4: pao = "Tradicional + Gergelim";
       Console.WriteLine("Pão Escolhido {0}.\n", pao);
+      preco = (preco+2.0);
       break;
       case 5: pao = "Tapioca";
       Console.WriteLine("Escolhido {0}.\n", pao);
+      preco = (preco+2.5);
       break;
       default: Console.WriteLine("Opção invalida, digite uma das opções validas! \n");
       break;
@@ -40,20 +47,24 @@ class Hamburguer
     bool adCarne=true;
     do{
       do{
-      Console.WriteLine ("Digite o codigo da carne desejada: \n| 1-Tradicional 150g | 2-Picanha 150g | 3-Frango 150g |4-Tradicional Smash 100g |");
+      Console.WriteLine ("Digite o codigo da carne desejada: \n| 1-Tradicional 150g=R$3,00 | 2-Picanha 150g=R$4,50 | 3-Frango 150g=R$3,00 |4-Tradicional Smash 100g=R$2,00 |");
       aux = Convert.ToInt32(Console.ReadLine());
       switch (aux){
         case 1: carne = carne + "Tradicional 150g ; ";
         Console.WriteLine("Carne Escolhida - {0}.\n", carne);
+        preco = (preco+3.0);
         break;
         case 2: carne = carne + "Picanha 150g ; ";
         Console.WriteLine("Carne Escolhida - {0}.\n", carne);
+        preco = (preco+4.5);
         break;
         case 3: carne = carne + "Frango 150g ; ";
         Console.WriteLine("Carne Escolhida - {0}.\n", carne);
+        preco = (preco+3.0);
         break;
         case 4: carne = carne + "Tradicional Smash 100g ; ";
         Console.WriteLine("Carne Escolhida - {0}.\n", carne);
+        preco = (preco+2.0);
         break;
         default: Console.WriteLine("Opção invalida, digite uma das opções validas! \n");
         break;
@@ -72,17 +83,20 @@ class Hamburguer
     bool adQueijo=true;
     do{
       do{
-      Console.WriteLine ("Digite o codigo do queijo desejado: \n| 1-Cheddar | 2-Mussarela | 3-Gorgonzola | 4-Nenhum |");
+      Console.WriteLine ("Digite o codigo do queijo desejado: \n| 1-Cheddar=R$2,00 | 2-Mussarela=R$1,50 | 3-Gorgonzola=R$2,50 | 4-Nenhum |");
       aux = Convert.ToInt32(Console.ReadLine());
       switch (aux){
         case 1: queijo = queijo + "Cheddar ; ";
         Console.WriteLine("Queijo Escolhido - {0}.\n", queijo);
+        preco = (preco+2.0);
         break;
         case 2: queijo = queijo + "Mussarela ; ";
         Console.WriteLine("Queijo Escolhido - {0}.\n", queijo);
+        preco = (preco+1.5);
         break;
         case 3: queijo = queijo + "Gorgonzola ; ";
         Console.WriteLine("Queijo Escolhido - {0}.\n", queijo);
+        preco = (preco+2.5);
         break;
         case 4: queijo = "Sem queijo ; ";
         Console.WriteLine("Queijo Escolhido - {0}.\n", queijo);
@@ -106,26 +120,32 @@ class Hamburguer
     bool adAdicionais=true;
     do{
       do{
-      Console.WriteLine ("Digite o codigo dos adicionais desejados: \n| 1-Bacon | 2-Onion Rings | 3-Cebola Caramelizada | 4-Banana Frita | 5-Salada | 6-Barbecue | 7-Sem Adicionais |");
+      Console.WriteLine ("Digite o codigo dos adicionais desejados: \n| 1-Bacon=R$2,50 | 2-Onion Rings=R$3,00 | 3-Cebola Caramelizada=R$2,00 | 4-Banana Frita=R$2,00 | 5-Salada=R$1,50 | 6-Barbecue=R$2,00 | 7-Sem Adicionais |");
       aux = Convert.ToInt32(Console.ReadLine());
       switch (aux){
         case 1: adicionais = adicionais + "Bacon ; ";
         Console.WriteLine("Adicionais Escolhidos - {0}.\n", adicionais);
+        preco = (preco+2.5);
         break;
         case 2: adicionais = adicionais + "Onion Rings ; ";
         Console.WriteLine("Adicionais Escolhidos - {0}.\n", adicionais);
+        preco = (preco+3.0);
         break;
         case 3: adicionais = adicionais + "Cebola Caramelizada ; ";
         Console.WriteLine("Adicionais Escolhidos - {0}.\n", adicionais);
+        preco = (preco+2.0);
         break;
         case 4: adicionais = adicionais + "Banana Frita ; ";
         Console.WriteLine("Adicionais Escolhidos - {0}.\n", adicionais);
+        preco = (preco+2.0);
         break;
         case 5: adicionais = adicionais + "Salada ; ";
         Console.WriteLine("Adicionais Escolhidos - {0}.\n", adicionais);
+        preco = (preco+1.5);
         break;
         case 6: adicionais = adicionais + "Barbecue ; ";
         Console.WriteLine("Adicionais Escolhidos - {0}.\n", adicionais);
+        preco = (preco+2.0);
         break;
         case 7: adicionais = "Sem adicionais ; ";
         Console.WriteLine("Adicionais Escolhidos - {0}.\n", adicionais);
@@ -144,6 +164,8 @@ class Hamburguer
     }while(adAdicionais==true);
   }
 
-
+  public double RetornaPreco(){
+    return preco;
+  }
 
 }
